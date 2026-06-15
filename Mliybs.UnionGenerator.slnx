@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Mliybs.UnionGenerator.Test/Mliybs.UnionGenerator.Test.csproj" />
+  <Project Path="Mliybs.UnionGenerator/Mliybs.UnionGenerator.csproj" />
+</Solution>
