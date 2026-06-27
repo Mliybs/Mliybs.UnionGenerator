@@ -17,6 +17,8 @@ namespace Mliybs.UnionGenerator.Generators
             context.RegisterPostInitializationOutput(static x =>
             {
                 x.AddSource("Mliybs.UnionGenerator.UnionGenerator.g.cs", """
+                    using System;
+
                     namespace Mliybs.UnionGenerator
                     {
                         [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct, AllowMultiple = false, Inherited = false)]
@@ -95,6 +97,8 @@ namespace Mliybs.UnionGenerator.Generators
                                 namespaces.Push(@namespace.Name);
                                 @namespace = @namespace.ContainingNamespace;
                             }
+
+                            writer.WriteLine("using System;");
 
                             writer.WriteLine("#nullable enable");
 

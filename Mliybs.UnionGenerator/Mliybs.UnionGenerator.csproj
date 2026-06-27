@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
 	<EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
-	<PackageVersion>0.0.1</PackageVersion>
+	<PackageVersion>0.0.2</PackageVersion>
 	<Authors>Mliybs</Authors>
 	<Description>An incremental generator that enhances default union in .NET</Description>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
