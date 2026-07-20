@@ -35,7 +35,7 @@ namespace Mliybs.UnionGenerator.Generators
             });
 
             var unionProvider = context.SyntaxProvider.ForAttributeWithMetadataName("Mliybs.UnionGenerator.UnionAttribute", (x, token) =>
-            x is StructDeclarationSyntax { Keyword.Text: not "union" } or ClassDeclarationSyntax
+            x is StructDeclarationSyntax or ClassDeclarationSyntax
                 , (x, token) =>
                 (x.SemanticModel, x.Attributes.Single(x => x.AttributeClass?.GetFullyQualifiedName() == "global::Mliybs.UnionGenerator.UnionAttribute"), (TypeDeclarationSyntax)x.TargetNode, (INamedTypeSymbol)x.TargetSymbol));
 
@@ -88,7 +88,7 @@ namespace Mliybs.UnionGenerator.Generators
                     {
                         var node = await reference.GetSyntaxAsync();
 
-                        if (node is StructDeclarationSyntax { Keyword.Text: "union", ParameterList.Parameters: { } @params })
+                        if (node is TypeDeclarationSyntax { Keyword.Text: "union", ParameterList.Parameters: { } @params })
                         {
                             var namespaces = new Stack<string>();
                             var @namespace = unionSymbol.ContainingNamespace;
